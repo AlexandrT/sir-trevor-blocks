@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="vendor/jquery/jquery.js"></script>
+        <script src="vendor/underscore/underscore.js"></script>
+        <script src="vendor/Eventable/eventable.js"></script>
+        <script src="vendor/sir-trevor-js/sir-trevor.js"></script>
+        <script src="plugins/ext_heading.js"></script>
+
+        <link rel="stylesheet" href="vendor/sir-trevor-js/sir-trevor.css"/>
+        <link rel="stylesheet" href="vendor/sir-trevor-js/sir-trevor-icons.css"/>
+    </head>
+    <body>
+        <form>
+          <textarea class="js-st-instance"></textarea>
+          <button type="submit" id="save">Save</button>
+        </form>
+        <script>
+          new SirTrevor.Editor({ el: $('.js-st-instance'),
+                defaultType: false });
+          $('#save').on('click', function() {
+            SirTrevor.getInstance().store('save');
+          });
+        </script>
+    </body>
+</html>
