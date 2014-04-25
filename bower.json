@@ -1,6 +1,6 @@
 {
   "name": "plugins-for-sir-trevor",
   "dependencies": {
-    "sir-trevor-js": "0.3.0"
+    "sir-trevor-js": "0.3.2"
   }
 }
