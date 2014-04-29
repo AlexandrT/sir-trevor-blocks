@@ -1,10 +1,12 @@
 /*
 Heading Block
 */
+
 SirTrevor.Locales.en.blocks.ext_heading = {
   title: "Введите заголовок",
   tag_type: "Tag type"
 };
+
 
 SirTrevor.Blocks.ExtHeading = (function(){
   var template = _.template([
@@ -41,11 +43,13 @@ SirTrevor.Blocks.ExtHeading = (function(){
 
     onBlockRender: function() {
       this.$("select").on("change", this.onTagChange);
+      this.$("select").trigger("change");
     },
 
     onTagChange: function(evt) {
       var sel = evt.target;
       var new_el = $("<" + evt.currentTarget.value + ">");
+      // var new_el = $(evt.currentTarget.value);
       var old_el = $(sel).parent().find(".st-text-block--heading");
 
       _.each(old_el.get(0).attributes, function(attrib) {
@@ -54,6 +58,7 @@ SirTrevor.Blocks.ExtHeading = (function(){
 
       new_el.html(old_el.html());
       old_el.replaceWith(new_el);
+
     }
   });
 })();
